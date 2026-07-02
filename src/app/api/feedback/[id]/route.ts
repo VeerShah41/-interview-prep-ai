@@ -4,6 +4,9 @@ import { getAuthUser } from '@/lib/auth';
 import { generateFeedback, type LLMMessage } from '@/lib/services/llm';
 import { getFeedbackPrompt } from '@/lib/services/interview/prompts';
 
+// Increase Vercel serverless function timeout to 60 seconds (max for Hobby tier)
+export const maxDuration = 60;
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
