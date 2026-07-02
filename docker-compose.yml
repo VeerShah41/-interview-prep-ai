@@ -1,0 +1,29 @@
+# Docker Compose for local development with PostgreSQL
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: mentorq
+      POSTGRES_PASSWORD: mentorq_dev_password
+      POSTGRES_DB: mentorq
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://mentorq:mentorq_dev_password@db:5432/mentorq
+      JWT_SECRET: local-development-jwt-secret-minimum-32-chars-long
+      GROQ_API_KEY: ${GROQ_API_KEY}
+      NODE_ENV: production
+
+volumes:
+  pgdata:
