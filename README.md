@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/landing.png" alt="MentorQ Landing Page" width="800" />
+  <img src="./assets/dashboard.png" alt="MentorQ Landing Page" width="800" />
   
   # MentorQ — AI Voice Mock Interview Platform
 
@@ -64,7 +64,7 @@ npm run dev
 I chose to prioritize **depth and latency** over feature breadth, focusing entirely on making the core conversational loop feel natural.
 
 <div align="center">
-  <img src="./assets/dashboard.png" alt="MentorQ Dashboard" width="800" />
+  <img src="./assets/landing.png" alt="MentorQ Dashboard" width="800" />
 </div>
 
 ### The Interaction Loop
